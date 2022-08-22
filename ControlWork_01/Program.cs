@@ -11,10 +11,28 @@ for (int i = 0; i < arrayOfStrings.Length; i++)
     arrayOfStrings[i] = Console.ReadLine();
 }
 
+int lengthLimit = 3;
+
+int numbersItems = CheckArray(arrayOfStrings, lengthLimit);
+
+string[] newArrayOfStrings = new string[numbersItems];
+
+int CheckArray(string[] array, int lengthLimit) // Метод подсчёта количества элементов, длина которых меньше или равна 3 символа.
+{
+    int result = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= lengthLimit) result++;
+    }
+    return result;
+}
+
 int InputNumbers(string input) // Метод, пользователь задает количество элементов в новом массиве
 {
     Console.Write(input);
     int output = Convert.ToInt32(Console.ReadLine());
     return output;
 }
+
+
 
